@@ -14,6 +14,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LLMConfig {
 
+    /**
+     * fixme StreamChatModel
+     */
     @Bean(name = "qwen")
     public ChatModel chatModelQwen() {
         return OpenAiChatModel.builder()

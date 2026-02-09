@@ -1,0 +1,14 @@
+server:
+  port: 9003
+
+
+spring:
+  application:
+    name: langchain4j-03-boot-integration
+
+langchain4j:
+  open-ai:
+    chat-model:
+      model-name: qwen3-max-preview
+      api-key: ${BAILIAN_API_KEY} # fixme 面试题相关，大模型调用不可以明文配置，你如何解决这个问题？ 1、yml环境变量读取 2、代码里getEnv
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1

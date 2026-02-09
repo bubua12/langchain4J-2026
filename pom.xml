@@ -13,6 +13,7 @@
     <modules>
         <module>langchain4j-01-helloworld</module>
         <module>langchain4j-02-multi-model-together</module>
+        <module>langchain4j-03-boot-integration</module>
     </modules>
 
     <properties>
