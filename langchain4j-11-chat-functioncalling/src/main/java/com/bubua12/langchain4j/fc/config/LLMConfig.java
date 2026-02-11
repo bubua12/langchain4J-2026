@@ -1,16 +1,12 @@
 package com.bubua12.langchain4j.fc.config;
 
 import com.bubua12.langchain4j.fc.service.FunctionAssistant;
-import dev.langchain4j.agent.tool.ToolSpecification;
+import com.bubua12.langchain4j.fc.service.InvoiceHandler;
 import dev.langchain4j.model.chat.ChatModel;
-import dev.langchain4j.model.chat.request.json.JsonObjectSchema;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import dev.langchain4j.service.AiServices;
-import dev.langchain4j.service.tool.ToolExecutor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.Map;
 
 /**
  *
@@ -34,7 +30,7 @@ public class LLMConfig {
     /**
      * 第一组 <a href="https://docs.langchain4j.dev/tutorials/tools#low-level-tool-api">Low Level Tool API</a>
      */
-    @Bean
+/*    @Bean
     public FunctionAssistant functionAssistant(ChatModel chatModel) {
         // 工具说明 ToolSpecification
         ToolSpecification toolSpecification = ToolSpecification.builder()
@@ -65,6 +61,18 @@ public class LLMConfig {
                 .chatModel(chatModel)
                 .tools(Map.of(toolSpecification, toolExecutor))
                 .build();
-    }
+    }*/
 
+
+    /**
+     * 第二组 <a href="https://docs.langchain4j.dev/tutorials/tools#high-level-tool-api">High Level Tool API</a>
+     * fixme 模型和参数调用声明的顺序有影响嘛？
+     */
+    @Bean
+    public FunctionAssistant functionAssistant(ChatModel chatModel) {
+        return AiServices.builder(FunctionAssistant.class)
+                .chatModel(chatModel)
+                .tools(new InvoiceHandler())
+                .build();
+    }
 }

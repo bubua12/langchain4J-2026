@@ -19,7 +19,8 @@ public class ChatFunctionCallingController {
 
     @GetMapping(value = "/chatfunction/test1")
     public String test1() {
-        String chat = functionAssistant.chat("开张发票,公司：大布布有限公司 税号：bubua121314 金额：668.12");
+//        String chat = functionAssistant.chat("开张发票,公司：大布布有限公司 税号：bubua121314 金额：668.12");
+        String chat = functionAssistant.chat("北京的天气怎么样？");
 
         System.out.println(chat);
 
