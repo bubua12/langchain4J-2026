@@ -3,9 +3,16 @@ package com.bubua12.langchain4j.prompt.controller;
 import cn.hutool.core.date.DateUtil;
 import com.bubua12.langchain4j.prompt.entities.LawPrompt;
 import com.bubua12.langchain4j.prompt.service.LawAssistant;
+import dev.langchain4j.data.message.UserMessage;
+import dev.langchain4j.model.chat.ChatModel;
+import dev.langchain4j.model.chat.response.ChatResponse;
+import dev.langchain4j.model.input.Prompt;
+import dev.langchain4j.model.input.PromptTemplate;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 /**
  *
@@ -17,6 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ChatPromptController {
     @Resource
     private LawAssistant lawAssistant;
+
+    @Resource
+    private ChatModel chatModel;
 
     /**
      * 针对方案一的测试
@@ -58,4 +68,33 @@ public class ChatPromptController {
         return "success : " + DateUtil.now() + "<br> \n\n chat: " + chat;
     }
 
+
+    /**
+     * 方案三：使用提示词模板生成提示词
+     * 单个参数可以使用{{it}》”占位符或者”{{参数名}”，如果为其他字符，系统不能自动识别会报错。
+     */
+    @GetMapping(value = "/chatprompt/test3")
+    public String test3() {
+        // 看看源码，默认 PromptTemplate 构造使用 it 属性作为默认占位符
+
+        // String role = "外科医生";
+        // String question = "牙疼";
+
+        String role = "财务会计";
+        String question = "人民币大写是什么";
+
+        // 1 构造 PromptTemplate模板
+        PromptTemplate template = PromptTemplate.from("你是一个{{it}}助手,{{question}}怎么办");
+        // 2 由 PromptTemplate生成Prompt
+        Prompt prompt = template.apply(Map.of("it", role, "question", question));
+        // 3 Prompt提示词变成UserMessage
+        UserMessage userMessage = prompt.toUserMessage();
+        // 4 调用大模型
+        ChatResponse chatResponse = chatModel.chat(userMessage);
+
+        // 4.1 后台打印
+        System.out.println(chatResponse.aiMessage().text());
+        // 4.2 前台返回
+        return "success : " + DateUtil.now() + "<br> \n\n chat: " + chatResponse.aiMessage().text();
+    }
 }
