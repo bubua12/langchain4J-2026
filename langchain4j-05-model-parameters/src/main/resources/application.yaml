@@ -1,0 +1,12 @@
+server:
+  port: 9005
+
+spring:
+  application:
+    name: langchain4j-05-model-parameter
+
+# 这里是为了看到日志的请求和响应的 debug相关内容才设置的
+logging:
+  level:
+    dev:
+    langchain4j: DEBUG
