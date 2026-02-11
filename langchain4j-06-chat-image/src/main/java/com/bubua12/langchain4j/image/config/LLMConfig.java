@@ -1,5 +1,7 @@
 package com.bubua12.langchain4j.image.config;
 
+import com.bubua12.langchain4j.image.controller.WanXImageModelController;
+import dev.langchain4j.community.model.dashscope.WanxImageModel;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +27,18 @@ public class LLMConfig {
                 .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
                 .logRequests(true)
                 .logResponses(true)
+                .build();
+    }
+
+
+    /**
+     * <a href="https://help.aliyun.com/zh/model-studio/text-to-image">通义万象实现图片生成</a>
+     */
+    @Bean
+    public WanxImageModel wanxImageModel() {
+        return WanxImageModel.builder()
+                .apiKey(System.getenv("BAILIAN_API_KEY"))
+                .modelName("wanx2.1-t2i-turbo")
                 .build();
     }
 }

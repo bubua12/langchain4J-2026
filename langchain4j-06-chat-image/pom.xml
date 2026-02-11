@@ -30,13 +30,14 @@
         </dependency>
 
 
-<!--        &lt;!&ndash;DashScope (Qwen)接入阿里云百炼平台-->
-<!--            https://docs.langchain4j.dev/integrations/language-models/dashscope-->
-<!--        &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>dev.langchain4j</groupId>-->
-<!--            <artifactId>langchain4j-community-dashscope-spring-boot-starter</artifactId>-->
-<!--        </dependency>-->
+        <!-- langchain4j和第三方平台整合 -->
+        <!--DashScope (Qwen)接入阿里云百炼平台
+            https://docs.langchain4j.dev/integrations/language-models/dashscope
+        -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-community-dashscope-spring-boot-starter</artifactId>
+        </dependency>
 
         <!-- web -->
         <dependency>
