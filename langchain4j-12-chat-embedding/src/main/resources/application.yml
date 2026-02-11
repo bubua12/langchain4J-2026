@@ -1,0 +1,11 @@
+server:
+  port: 9016
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: langchain4j-12-chat-embedding
