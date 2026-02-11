@@ -1,0 +1,7 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: langchain4j-04-low-high-api
+

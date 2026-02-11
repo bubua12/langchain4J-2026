@@ -14,6 +14,7 @@
         <module>langchain4j-01-helloworld</module>
         <module>langchain4j-02-multi-model-together</module>
         <module>langchain4j-03-boot-integration</module>
+        <module>langchain4j-04-low-high-api</module>
     </modules>
 
     <properties>
