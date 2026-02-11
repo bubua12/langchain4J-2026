@@ -70,8 +70,9 @@ public class ChatPromptController {
 
 
     /**
-     * 方案三：使用提示词模板生成提示词
+     * 方案三：使用提示词模板生成提示词 fixme 这里不是特别的懂
      * 单个参数可以使用{{it}》”占位符或者”{{参数名}”，如果为其他字符，系统不能自动识别会报错。
+     * 提示词好处：跟大模型交互功能边界更加清晰、提示词更加专业，以获得更好的问答效果
      */
     @GetMapping(value = "/chatprompt/test3")
     public String test3() {
