@@ -18,6 +18,7 @@
         <module>langchain4j-05-model-parameters</module>
         <module>langchain4j-06-chat-image</module>
         <module>langchain4j-07-chat-stream</module>
+        <module>langchain4j-08-chat-memory</module>
     </modules>
 
     <properties>
