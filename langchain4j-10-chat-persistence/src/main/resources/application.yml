@@ -1,0 +1,19 @@
+server:
+  port: 9010
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: langchain4j-10-chat-persistence
+  data:
+    redis:
+      host: 192.168.31.138
+      port: 6379
+      database: 0
+      connect-timeout: 3s
+      timeout: 2s
+      password: bubua12
