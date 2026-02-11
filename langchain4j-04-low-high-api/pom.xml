@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>langchain4j-04-low-high-api</artifactId>
+    <description>langchain4j 的低阶以及高阶api的使用</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

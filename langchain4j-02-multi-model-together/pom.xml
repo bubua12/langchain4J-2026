@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>langchain4j-02-multi-model-together</artifactId>
+    <description>langchain4j: 多模型共存的应用案例演示</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

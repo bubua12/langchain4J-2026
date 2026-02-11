@@ -11,6 +11,7 @@
 
     <artifactId>langchain4j-01-helloworld</artifactId>
     <name>langchain4j-01-helloworld</name>
+    <description>langchain4j: 永远的Hello World</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

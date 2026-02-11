@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>langchain4j-03-boot-integration</artifactId>
-    <description>LangChain4j 之整合 SpringBoot</description>
+    <description>langchain4j: 整合SpringBoot</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
