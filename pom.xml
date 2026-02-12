@@ -24,6 +24,7 @@
         <module>langchain4j-11-chat-functioncalling</module>
         <module>langchain4j-12-chat-embedding</module>
         <module>langchain4j-13-chat-rag</module>
+        <module>langchain4j-14-chat-mcp</module>
     </modules>
 
     <properties>
